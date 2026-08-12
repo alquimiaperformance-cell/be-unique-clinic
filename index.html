@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Unique Clinic | Harmonização Facial no Tatuapé</title>
+    <!-- Fontes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navegação -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <img src="assets/images/logo-hq.png" alt="Be Unique Logo" class="logo" style="height: 65px; filter: invert(1) brightness(1.2); mix-blend-mode: screen; padding-top: 5px;">
+            <nav class="nav-links">
+                <a href="#procedimentos">Especialidades</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#sobre">A Clínica</a>
+                <a href="#contato" class="btn btn-outline">Agendar Avaliação</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section com Vídeo de Fundo -->
+    <section class="hero">
+        <div class="video-overlay"></div>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/images/video-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content container">
+            <span class="subtitle">Be Unique Clinic</span>
+            <h2 class="headline">Harmonização Facial e Rinomodelação no Tatuapé.</h2>
+            <p class="hero-text">Procedimentos estéticos faciais focados em resultados naturais. Venha nos visitar!</p>
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-primary">Agendar pelo WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Procedimentos Section -->
+    <section id="procedimentos" class="procedures">
+        <div class="container">
+            <div class="section-title">
+                <h2>Especialidades da Clínica</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="assets/images/harmonizacao-facial-realista.png" alt="Harmonização Facial">
+                    <div class="card-content">
+                        <h3>Harmonização Facial</h3>
+                        <p>Ajuste de proporções e simetria do rosto com ácido hialurônico e toxina botulínica.</p>
+                    </div>
+                </div>
+                
+                <div class="card delay-1">
+                    <img src="assets/images/rinomodelação-estruturada.jpg" alt="Rinomodelação">
+                    <div class="card-content">
+                        <h3>Rinomodelação Estruturada</h3>
+                        <p>Alinhamento do dorso e elevação da ponta nasal. Procedimento realizado no consultório.</p>
+                    </div>
+                </div>
+
+                <div class="card delay-2">
+                    <img src="assets/images/otomodelação.png" alt="Otomodelação">
+                    <div class="card-content">
+                        <h3>Otomodelação</h3>
+                        <p>Correção estética das orelhas sem necessidade de cirurgia complexa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Resultados Section -->
+    <section id="resultados" class="results" style="padding: 100px 0; background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resultados Reais</h2>
+                <div class="line"></div>
+                <p style="color: var(--text-muted); margin-top: 15px; max-width: 600px; margin-inline: auto;">Transformações que valorizam a beleza natural de cada paciente.</p>
+            </div>
+            
+            <div class="slider-container" style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2);">
+                <div class="image-comparison" style="position: relative; width: 100%; height: 500px; background: #000;">
+                    <img src="assets/images/resultado1.jpg" alt="Antes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    <div class="img-after-wrapper" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden;">
+                        <img class="img-after" src="assets/images/resultado 1.png" alt="Depois" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: var(--gold); cursor: ew-resize; transform: translateX(-50%);">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                            <span style="color: #000; font-size: 20px; font-weight: bold;">&lt;&gt;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="testimonials" style="padding: 100px 0; background: var(--bg-dark);">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que nossas pacientes dizem</h2>
+                <div class="line"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="card" style="padding: 30px; background: var(--bg-card); border-radius: 8px; border-left: 3px solid var(--gold);">
+                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"A Dra. Letícia tem mãos de fada! O resultado ficou super natural, exatamente como eu queria. A clínica é linda e o atendimento impecável."</p>
+                    <h4 style="color: var(--gold); font-family: var(--font-heading);">Mariana S.</h4>
+                </div>
+                <div class="card" style="padding: 30px; background: var(--bg-card); border-radius: 8px; border-left: 3px solid var(--gold);">
+                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"Fiz minha rinomodelação e estou apaixonada. A recuperação foi tranquila e a estrutura do consultório me passou muita segurança."</p>
+                    <h4 style="color: var(--gold); font-family: var(--font-heading);">Fernanda C.</h4>
+                </div>
+                <div class="card" style="padding: 30px; background: var(--bg-card); border-radius: 8px; border-left: 3px solid var(--gold);">
+                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"Minha otomodelação mudou minha autoestima! Recomendo de olhos fechados o trabalho primoroso."</p>
+                    <h4 style="color: var(--gold); font-family: var(--font-heading);">Camila R.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="hero" style="min-height: 70vh;">
+        <div class="video-overlay" style="background: rgba(0,0,0,0.75);"></div>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/images/video-escritorio.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content container" style="max-width: 900px; margin: 0 auto; padding: 120px 0; text-align: center;">
+            <h2 class="headline" style="font-size: 3rem; margin-bottom: 25px;">A Autoridade de Infraestrutura</h2>
+            <p class="hero-text" style="font-size: 1.2rem; max-width: 100%; color: #eee; font-weight: 300;">Clínica especializada em procedimentos estéticos faciais avançados. Estrutura completa e profissionais capacitados para realizar harmonização facial, rinomodelação e otomodelação com total segurança.</p>
+            
+            <div class="stats" style="display: flex; gap: 60px; justify-content: center; margin-top: 50px;">
+                <div class="stat">
+                    <span class="number" style="display: block; font-size: 2.2rem; color: var(--accent); font-family: 'Playfair Display', serif; margin-bottom: 5px;">Tatuapé</span>
+                    <span class="label" style="font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #aaa;">São Paulo - SP</span>
+                </div>
+                <div class="stat">
+                    <span class="number" style="display: block; font-size: 2.2rem; color: var(--accent); font-family: 'Playfair Display', serif; margin-bottom: 5px;">R. Restinga, 113</span>
+                    <span class="label" style="font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #aaa;">Sala 1709</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contato CTA -->
+    <footer id="contato" class="footer" style="padding: 80px 0; background: var(--bg-dark);">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Agende sua avaliação</h2>
+            <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Rua Restinga, 113 - Sala 1709, Tatuapé, São Paulo - SP.</p>
+            
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 50px;">
+                <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-whatsapp" style="padding: 15px 30px; border-radius: 4px; font-weight: bold; background: #25D366; color: var(--bg-dark); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    Chamar no WhatsApp
+                </a>
+                <a href="https://www.google.com/maps/place/R.+Restinga,+113+-+Tatuap%C3%A9,+S%C3%A3o+Paulo+-+SP" target="_blank" class="btn btn-outline" style="padding: 15px 30px; border-radius: 4px; font-weight: bold; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    📍 Como chegar lá
+                </a>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="maps-container" style="width: 100%; max-width: 800px; height: 350px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.2);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.81898748378!2d-46.57539!3d-23.539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e9334bbbd3b%3A0x67db20fb319df6c2!2sR.%20Restinga%2C%20113%20-%20Tatuap%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003065-020!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="copy" style="margin-top: 50px; font-size: 0.9rem; color: #555;">
+                &copy; 2026 Be Unique Clinic. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
