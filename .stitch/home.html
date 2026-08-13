@@ -150,7 +150,7 @@ h2 {
     overflow: hidden;
 }
 
-.hero-video {
+.hero-image {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -159,6 +159,7 @@ h2 {
     transform: translate(-50%, -50%);
     z-index: -2;
     object-fit: cover;
+    will-change: transform;
 }
 
 .video-overlay {
@@ -509,10 +510,8 @@ h2 {
 
     <!-- Hero Section com Vídeo de Fundo -->
     <section class="hero">
-        <div class="video-overlay"></div>
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-hero.mp4" type="video/mp4">
-        </video>
+        <div class="video-overlay" style="background: linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 100%);"></div>
+        <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/imagem%20hero.png" class="hero-image" alt="Be Unique Hero">
         <div class="hero-content container" style="text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 20px;">
             <span class="tag">Bem-vindo à Be Unique</span>
             <h2 class="headline" style="font-size: 4.5rem; line-height: 1.05;">Harmonização Facial,<br><i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Rinomodelação Estruturada</i><br>e Otomodelação.</h2>
@@ -642,20 +641,20 @@ h2 {
     </style>
     <script src="js/app.js"></script>
     <script>
-        // Animação Premium de Scroll para os cards de Especialidades e Hero Video
+        // Animação Premium de Scroll para os cards de Especialidades e Hero Image
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.procedures .card');
-            const heroVideo = document.querySelector('.hero-video');
+            const heroImage = document.querySelector('.hero-image');
             
             window.addEventListener('scroll', () => {
                 let scrollY = window.scrollY;
 
-                // 1. Efeito Parallax Dinâmico no Vídeo de Fundo
-                if (heroVideo && scrollY <= window.innerHeight) {
+                // 1. Efeito Parallax Dinâmico na Imagem de Fundo
+                if (heroImage && scrollY <= window.innerHeight) {
                     // Expande levemente a imagem e empurra para baixo para dar profundidade
                     let scale = 1 + (scrollY / window.innerHeight) * 0.15;
                     let translateY = scrollY * 0.35;
-                    heroVideo.style.transform = `translate(-50%, calc(-50% + ${translateY}px)) scale(${scale})`;
+                    heroImage.style.transform = `translate(-50%, calc(-50% + ${translateY}px)) scale(${scale})`;
                 }
 
                 // 2. Efeito Magnético nos Cards
