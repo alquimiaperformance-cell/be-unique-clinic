@@ -3,691 +3,477 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be Unique Clinic | Harmonização Facial no Tatuapé</title>
-    <!-- Fontes Premium -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Be Unique Clínica</title>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
 :root {
-    --bg-dark: #0A0A0A;
-    --bg-card: #141414;
-    --gold: #D4AF37;
-    --gold-hover: #F3E5AB;
-    --text-light: #F5F5F5;
-    --text-muted: #A0A0A0;
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    /* Taste Design Palette */
+    --obsidian: #050505;
+    --charcoal: #121212;
+    --white: #FFFFFF;
+    --steel: #A1A1AA;
+    --gold: #E5C158;
+    --whisper: rgba(255, 255, 255, 0.08);
+
+    /* Typography */
+    --font-display: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-body: 'Outfit', sans-serif;
+
+    /* Spacing & Layout */
+    --container: 1400px;
+    --section-pad: clamp(4rem, 10vw, 8rem);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+/* Reset Absoluto */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--obsidian);
+    color: var(--white);
     font-family: var(--font-body);
+    font-weight: 300;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+img, video { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* Tipografia Editorial */
+.text-display {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
 }
 
-/* Typography */
-h1, h2, h3 {
-    font-family: var(--font-heading);
+.text-display i {
+    font-family: var(--font-serif);
     font-weight: 400;
+    font-style: italic;
+    color: var(--gold);
+    text-transform: lowercase;
+    letter-spacing: 0;
 }
 
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.text-body {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: var(--steel);
+    max-width: 50ch;
+}
+
+/* Layouts */
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section {
+    padding: var(--section-pad) 0;
+    position: relative;
 }
 
 /* Navbar */
 .navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
+    top: 0; left: 0; width: 100%;
+    padding: 2rem 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    mix-blend-mode: difference; /* Elegância máxima */
+    transition: padding 0.3s ease;
 }
 
-.nav-content {
+.nav-grid {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
 }
 
-.logo {
-    color: var(--gold);
+.nav-brand {
     font-size: 1.5rem;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.nav-brand i {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .nav-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border-radius: 2px;
-}
-
-.btn-primary {
-    background-color: var(--gold);
-    color: var(--bg-dark);
-    font-weight: 600;
-}
-
-.btn-primary:hover {
-    background-color: var(--gold-hover);
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    border: 1px solid var(--gold);
-    color: var(--gold) !important;
-}
-
-.btn-outline:hover {
-    background-color: var(--gold);
-    color: var(--bg-dark) !important;
-}
-
-.btn-whatsapp {
-    background-color: #25D366;
-    color: #fff;
-    font-weight: 600;
-    padding: 15px 30px;
-    border-radius: 50px;
-    margin-top: 20px;
-}
-
-.btn-whatsapp:hover {
-    background-color: #128C7E;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
-}
-
-/* Hero Section */
-.hero {
     position: relative;
-    height: 100vh;
-    display: flex;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 0; width: 0; height: 1px;
+    background: var(--white);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* Botoes */
+.btn {
+    display: inline-flex;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    padding: 1.2rem 2.5rem;
+    background: var(--gold);
+    color: var(--obsidian);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+.btn:hover { transform: scale(0.97); }
+
+.btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--whisper);
 }
 
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -2;
-    object-fit: cover;
-}
-@media (max-width: 768px) {
-    .hero-video-top {
-        object-position: 30% center;
-    }
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 100%);
-    z-index: -1;
+/* Hero Asymmetric */
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: end;
+    padding-bottom: 10vh;
+    padding-top: 20vh;
 }
 
 .hero-content {
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 2;
 }
 
-.subtitle {
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.headline {
-    font-size: 4rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-}
-
-.hero-text {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-}
-
-/* Procedures Section */
-.procedures {
-    padding: 100px 0;
-    background-color: var(--bg-dark);
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title .line {
-    width: 60px;
-    height: 2px;
-    background-color: var(--gold);
-    margin: 0 auto;
-}
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    transition: transform 0.4s ease, border-color 0.4s ease;
+.hero-media {
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100vh;
+    z-index: 1;
     overflow: hidden;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--gold);
-}
-
-.card img {
+.hero-media video {
     width: 100%;
-    height: 250px;
+    height: 100%;
     object-fit: cover;
-    filter: grayscale(30%);
-    transition: filter 0.4s ease;
+    opacity: 0.6; /* Moody */
 }
 
-.card:hover img {
+.hero-media::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, var(--obsidian) 0%, transparent 100%);
+}
+
+/* Especialidades Zig-Zag */
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    margin-top: 6rem;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.service-row:nth-child(even) {
+    direction: rtl;
+}
+.service-row:nth-child(even) > * {
+    direction: ltr;
+}
+
+.service-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 8rem;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.2;
+    position: absolute;
+    top: -4rem; left: -2rem;
+    z-index: 0;
+}
+
+.service-info {
+    position: relative;
+    z-index: 1;
+}
+.service-info h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.service-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--charcoal);
+    overflow: hidden;
+    position: relative;
+}
+.service-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.8s ease;
+}
+.service-row:hover .service-img img {
     filter: grayscale(0%);
 }
 
-.card-content {
-    padding: 30px;
-}
-
-.card-content h3 {
-    color: var(--gold);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.card-content p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* Editorial & Tags */
-.tag {
-    display: inline-block;
-    padding: 6px 16px;
-    border-radius: 50px;
-    background: rgba(212, 175, 55, 0.1);
-    color: var(--gold);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    margin-bottom: 20px;
-}
-
-.quote-icon {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    line-height: 0;
-    color: var(--gold);
-    opacity: 0.4;
-    display: block;
-    margin-bottom: 25px;
-    margin-top: 20px;
-}
-
-/* About Section */
-.about {
-    padding: 100px 0;
-    background-color: #050505;
-}
-
-.about-flex {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.about-image {
-    flex: 1;
-}
-
-.about-image img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.stats {
-    display: flex;
-    gap: 40px;
-    margin-top: 40px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.stat .number {
-    display: block;
-    font-size: 2.5rem;
-    font-family: var(--font-heading);
-    color: var(--gold);
-}
-
-.stat .label {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-}
-
-/* Footer */
-.footer {
-    padding: 100px 0 40px;
-    text-align: center;
-    background-color: var(--bg-dark);
-    background-image: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, rgba(10, 10, 10, 1) 70%);
-}
-
-.footer-content h2 {
-    font-size: 3rem;
-}
-
-.footer-content p {
-    color: var(--text-muted);
-    max-width: 500px;
-    margin: 0 auto 30px;
-}
-
-.footer .address {
-    margin-top: 60px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.copy {
-    margin-top: 40px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    font-size: 0.8rem;
-    color: #666;
-}
-
-/* Animations */
-.fade-in {
-    animation: fadeIn 1s ease forwards;
-}
-
-.fade-in-up {
-    animation: fadeInUp 1s ease forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Scroll Reveal classes via JS */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.delay-1 { transition-delay: 0.2s; }
-.delay-2 { transition-delay: 0.4s; }
-
-/* Responsive */
-@media (max-width: 992px) {
-    .headline { font-size: 3rem; }
-    .about-flex { flex-direction: column; }
-    .about-image img { height: 400px; }
-}
-
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .headline { font-size: 2.5rem; }
-    .footer-content h2 { font-size: 2rem; }
-}
-
-/* Slider Antes e Depois */
-.slider-container {
+/* Video Infrastrutura */
+.infrastructure {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 1px solid var(--accent);
     aspect-ratio: 16/9;
-}
-.image-comparison {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-.image-comparison img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.img-before {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.img-after-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
+    border-radius: 4px;
     overflow: hidden;
+    margin-top: 4rem;
+    border: 1px solid var(--whisper);
 }
-.img-after {
-    width: 200%; /* Ajuste dinmico via JS se necessrio, ou absoluto */
-    max-width: none;
+
+/* Footer Minimalista */
+.footer-lux {
+    padding: 8rem 0 4rem;
+    background: var(--charcoal);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
 }
-.slider-handle {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background-color: var(--accent);
-    cursor: ew-resize;
-    transform: translateX(-50%);
-    z-index: 10;
-}
-.slider-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: var(--bg-dark);
-    border: 2px solid var(--accent);
+
+/* Botão Flutuante WhatsApp */
+.wa-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: var(--obsidian);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent);
-    font-weight: bold;
-    font-size: 18px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    font-size: 30px;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    animation: waPulse 2s infinite;
 }
 
+@keyframes waPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Responsive Coreografia */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 15vh;
+    }
+    .hero-media {
+        width: 100%;
+        opacity: 0.3;
+    }
+    .hero-media::after {
+        background: linear-gradient(to top, var(--obsidian) 10%, transparent 100%);
+    }
+    .nav-links { display: none; }
+    .service-row { grid-template-columns: 1fr; gap: 2rem; }
+    .service-row:nth-child(even) { direction: ltr; }
+    .wa-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; }
+}
+
+/* Animações (Cascade Reveal JS) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
 
 </style>
 </head>
 <body>
 
-    <!-- Navegação -->
-    <header class="navbar" style="height: 90px; display: flex; align-items: center;">
-        <div class="container nav-content" style="width: 100%; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;">
-            <div class="logo-text" style="font-family: var(--font-body); font-size: 1.2rem; font-weight: 700; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; margin: 0; white-space: nowrap;">Be Unique <span style="font-weight: 300; color: var(--gold);">Clínica</span></div>
-            <nav class="nav-links" style="display: flex; gap: 30px; justify-content: center;">
-                <a href="#procedimentos" style="margin: 0;">Especialidades</a>
-                <a href="#sobre" style="margin: 0;">A Clínica</a>
+    <!-- Floating WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5511957845035&text=Gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" class="wa-float">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="var(--obsidian)" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.98 1.005-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-grid">
+            <div class="nav-brand">Be Unique <i>Clínica</i></div>
+            <nav class="nav-links">
+                <a href="#especialidades">Especialidades</a>
+                <a href="#infra">A Clínica</a>
             </nav>
-            <div style="text-align: right;">
-                <a href="#contato" class="btn btn-outline" style="border-radius: 50px;">Agendar Avaliação</a>
-            </div>
+            <a href="https://api.whatsapp.com/send/?phone=5511957845035&text=Gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" class="btn btn-ghost" style="display: none;">Agendar</a>
         </div>
     </header>
 
-    <!-- Hero Section com Vídeo de Fundo -->
+    <!-- Hero Asymmetric -->
     <section class="hero">
-        <div class="video-overlay" style="background: linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 100%);"></div>
-        <video autoplay muted loop playsinline class="hero-video hero-video-top">
-            <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-hero.mp4" type="video/mp4">
-        </video>
-        <div class="hero-content container" style="text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 20px;">
-            <span class="tag">Bem-vindo à Be Unique</span>
-            <h2 class="headline" style="font-size: 4.5rem; line-height: 1.05;">Harmonização Facial,<br><i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Rinomodelação Estruturada</i><br>e Otomodelação.</h2>
-            <p class="hero-text" style="font-size: 1.2rem; max-width: 500px;">Procedimentos estéticos de alto padrão para realçar sua beleza natural.</p>
-            <a href="https://api.whatsapp.com/send/?phone=5511957845035&text=Gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" class="btn btn-primary">Agendar pelo WhatsApp</a>
+        <div class="hero-media">
+            <video autoplay muted loop playsinline>
+                <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-hero.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="hero-content container">
+            <h1 class="text-display reveal">Estética<br>Facial<br><i>Avançada</i></h1>
+            <p class="text-body reveal delay-1">Harmonização Facial, Rinomodelação Estruturada e Otomodelação desenhadas para realçar sua beleza natural com exclusividade.</p>
+            <div class="reveal delay-2" style="margin-top: 1rem;">
+                <a href="#especialidades" class="btn">Descubra</a>
+            </div>
         </div>
     </section>
 
-    <!-- Procedimentos Section -->
-    <section id="procedimentos" class="procedures">
+    <!-- Especialidades Zig-Zag -->
+    <section id="especialidades" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Especialidades da Clínica</h2>
-                <div class="line"></div>
-            </div>
+            <h2 class="text-display reveal" style="font-size: clamp(2.5rem, 5vw, 5rem); margin-bottom: 2rem;">Nossa<br><i>Expertise</i></h2>
             
-            <div class="cards-grid">
-                <div class="card" style="border-radius: 16px;">
-                    <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/harmonizacao-facial-realista.png" alt="Harmonização Facial">
-                    <div class="card-content">
-                        <h3>Harmonização Facial</h3>
-                        <p>Ajuste de proporções e simetria do rosto com ácido hialurônico e toxina botulínica.</p>
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-row reveal">
+                    <div class="service-img">
+                        <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/imagem%201.png" alt="Otomodelação">
                     </div>
-                </div>
-                
-                <div class="card delay-1" style="border-radius: 16px;">
-                    <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/rinomodelação-estruturada.jpg" alt="Rinomodelação">
-                    <div class="card-content">
-                        <h3>Rinomodelação Estruturada</h3>
-                        <p>Alinhamento do dorso e elevação da ponta nasal. Procedimento realizado no consultório.</p>
-                    </div>
-                </div>
-
-                <div class="card delay-2" style="border-radius: 16px;">
-                    <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/otomodelação.png" alt="Otomodelação">
-                    <div class="card-content">
+                    <div class="service-info">
+                        <span class="service-num">01</span>
                         <h3>Otomodelação</h3>
-                        <p>Correção estética das orelhas sem necessidade de cirurgia complexa.</p>
+                        <p class="text-body">Técnica minimamente invasiva, realizada no consultório sob anestesia local, garantindo simetria e harmonia imediata. Resultados definitivos e recuperação rápida.</p>
+                    </div>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="service-row reveal">
+                    <div class="service-img">
+                        <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/imagem%203.png" alt="Rinomodelação">
+                    </div>
+                    <div class="service-info">
+                        <span class="service-num">02</span>
+                        <h3>Rinomodelação</h3>
+                        <p class="text-body">Método estruturado para corrigir assimetrias, afinar e elevar a ponta nasal. O equilíbrio perfeito do seu perfil de forma segura, com fios e preenchedores de altíssima qualidade.</p>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="service-row reveal">
+                    <div class="service-img">
+                        <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/imagem%202.png" alt="Harmonização">
+                    </div>
+                    <div class="service-info">
+                        <span class="service-num">03</span>
+                        <h3>Harmonização</h3>
+                        <p class="text-body">Rejuvenescimento e embelezamento facial com protocolos exclusivos. Botox, preenchimentos e bioestimuladores combinados estrategicamente para realçar o que você tem de melhor.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-    <!-- Depoimentos Section -->
-    <section id="depoimentos" class="testimonials" style="padding: 100px 0; background: var(--bg-dark);">
+    <!-- Infraestrutura Cinematic -->
+    <section id="infra" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>O que nossas <i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">pacientes</i> dizem</h2>
-                <div class="line"></div>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="card" style="padding: 40px; background: var(--bg-card); border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.1);">
-                    <span class="quote-icon">"</span>
-                    <p style="font-size: 1.05rem; font-style: italic; color: var(--text-light); margin-bottom: 30px;">A Dra. Letícia tem mãos de fada! O resultado ficou super natural, exatamente como eu queria. A clínica é linda e o atendimento impecável.</p>
-                    <h4 style="color: var(--gold); font-family: var(--font-body); font-weight: 600;">Mariana S.</h4>
-                </div>
-                <div class="card" style="padding: 40px; background: var(--bg-card); border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.1);">
-                    <span class="quote-icon">"</span>
-                    <p style="font-size: 1.05rem; font-style: italic; color: var(--text-light); margin-bottom: 30px;">Fiz minha rinomodelação e estou apaixonada. A recuperação foi tranquila e a estrutura do consultório me passou muita segurança.</p>
-                    <h4 style="color: var(--gold); font-family: var(--font-body); font-weight: 600;">Fernanda C.</h4>
-                </div>
-                <div class="card" style="padding: 40px; background: var(--bg-card); border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.1);">
-                    <span class="quote-icon">"</span>
-                    <p style="font-size: 1.05rem; font-style: italic; color: var(--text-light); margin-bottom: 30px;">Minha otomodelação mudou minha autoestima! Recomendo de olhos fechados o trabalho primoroso e de alta precisão.</p>
-                    <h4 style="color: var(--gold); font-family: var(--font-body); font-weight: 600;">Camila R.</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre Section -->
-    <section id="sobre" class="hero" style="min-height: auto; background: var(--bg-card); padding: 120px 0;">
-        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
-            <span class="tag">A Clínica</span>
-            <h2 class="headline" style="font-size: 3.5rem; margin-bottom: 20px;">Infraestrutura <i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Premium</i></h2>
+            <h2 class="text-display reveal" style="font-size: clamp(2.5rem, 5vw, 5rem); margin-bottom: 2rem;">Experiência<br><i>Premium</i></h2>
+            <p class="text-body reveal delay-1" style="max-width: 60ch;">Priorizamos a segurança, o conforto e a discrição. Um espaço desenhado para que a sua jornada de beleza seja excepcional do início ao fim.</p>
             
-            <div style="aspect-ratio: 16/9; width: 100%; margin: 40px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.2);">
+            <div class="infrastructure reveal delay-2">
                 <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02);">
                     <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-escritorio.mp4" type="video/mp4">
                 </video>
             </div>
-
-            <p class="hero-text" style="font-size: 1.1rem; color: var(--text-light); font-weight: 300; line-height: 1.8; margin-bottom: 50px;">Clínica especializada em estética facial avançada. Priorizamos a segurança, o conforto e a discrição para que você tenha a melhor experiência desde a primeira consulta.</p>
-            
-            <div class="stats" style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; border: none; padding: 0;">
-                <div class="stat">
-                    <span class="number" style="display: block; font-size: 2.2rem; color: var(--accent); font-family: 'Playfair Display', serif; margin-bottom: 5px;">Tatuapé</span>
-                    <span class="label" style="font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #aaa;">São Paulo - SP</span>
-                </div>
-                <div class="stat">
-                    <span class="number" style="display: block; font-size: 2.2rem; color: var(--accent); font-family: 'Playfair Display', serif; margin-bottom: 5px;">R. Restinga, 113</span>
-                    <span class="label" style="font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #aaa;">Sala 1709</span>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Footer / Contato CTA -->
-    <footer id="contato" class="footer" style="padding: 80px 0; background: var(--bg-dark);">
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Agende sua avaliação</h2>
-            <p style="color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem;">Rua Restinga, 113 - Sala 1709, Tatuapé, São Paulo - SP.</p>
+    <!-- Footer Lux -->
+    <footer class="footer-lux section">
+        <div class="container reveal">
+            <h2 class="text-display" style="font-size: clamp(2rem, 4vw, 4rem); margin-bottom: 1rem;">Be Unique<br><i>Clínica</i></h2>
+            <p class="text-body" style="margin: 0 auto 3rem; text-align: center;">Rua Restinga, 113 - Sala 1709<br>Tatuapé, São Paulo - SP</p>
             
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 50px;">
-                <a href="https://api.whatsapp.com/send/?phone=5511957845035&text=Gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp" style="padding: 15px 30px; border-radius: 4px; font-weight: bold; background: #25D366; color: var(--bg-dark); text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                    Chamar no WhatsApp
-                </a>
-                <a href="https://www.google.com/maps/place/R.+Restinga,+113+-+Tatuap%C3%A9,+S%C3%A3o+Paulo+-+SP" target="_blank" class="btn btn-outline" style="padding: 15px 30px; border-radius: 4px; font-weight: bold; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                    📍 Como chegar lá
-                </a>
-            </div>
-
-            <!-- Google Maps Embed -->
-            <div class="maps-container" style="width: 100%; max-width: 800px; height: 350px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.2);">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.81898748378!2d-46.57539!3d-23.539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5e9334bbbd3b%3A0x67db20fb319df6c2!2sR.%20Restinga%2C%20113%20-%20Tatuap%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003065-020!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-            <div class="copy" style="margin-top: 50px; font-size: 0.9rem; color: #555;">
-                &copy; 2026 Be Unique Clinic. Todos os direitos reservados.
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://api.whatsapp.com/send/?phone=5511957845035&text=Gostaria+de+mais+informa%C3%A7%C3%B5es&type=phone_number&app_absent=0" target="_blank" class="btn">Agendar Avaliação</a>
+                <a href="https://www.google.com/maps/place/R.+Restinga,+113+-+Tatuap%C3%A9,+S%C3%A3o+Paulo+-+SP" target="_blank" class="btn btn-ghost">📍 Como Chegar</a>
             </div>
         </div>
     </footer>
 
-    <style>
-        @media (max-width: 768px) {
-            .navbar { height: auto !important; padding: 15px 0; }
-            .nav-content { display: flex !important; flex-direction: column; justify-content: center; gap: 15px; }
-            .nav-content > div:last-child { display: none; }
-            .nav-links { display: flex !important; margin: 0; }
-            .headline { font-size: 3rem !important; }
-        }
-    </style>
-    <script src="js/app.js"></script>
+    <!-- Cascade Reveal Script -->
     <script>
-        // Animação Premium de Scroll para os cards de Especialidades
         document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.procedures .card');
-            
-            window.addEventListener('scroll', () => {
-                // Efeito Magnético nos Cards
-                cards.forEach((card, index) => {
-                    const rect = card.getBoundingClientRect();
-                    // Quando o card começa a subir e sair da tela (viewport)
-                    if (rect.top < window.innerHeight * 0.3) { 
-                        // Calcula o quanto já subiu além do ponto de gatilho
-                        let distance = (window.innerHeight * 0.3) - rect.top;
-                        let opacity = Math.max(1 - (distance / 300), 0);
-                        
-                        if (window.innerWidth <= 768) {
-                            // Mobile: Primeiro card pra esquerda, segundo pra direita
-                            let direction = index % 2 === 0 ? -1 : 1;
-                            let shift = distance * 1.5 * direction;
-                            card.style.transform = `translateX(${shift}px)`;
-                        } else {
-                            // Desktop: Todos sobem suavemente
-                            let shift = -distance;
-                            card.style.transform = `translateY(${shift}px)`;
-                        }
-                        
-                        card.style.opacity = opacity;
-                    } else {
-                        // Reset quando estiver na visualização normal
-                        card.style.transform = 'none';
-                        card.style.opacity = 1;
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
                     }
                 });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Navbar shrink effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.padding = '1rem 0';
+                } else {
+                    navbar.style.padding = '2rem 0';
+                }
             });
         });
     </script>
