@@ -15,7 +15,7 @@
     <!-- Navegação -->
     <header class="navbar">
         <div class="container nav-content">
-            <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/logo-hq.png" alt="Be Unique Logo" class="logo" style="height: 65px; filter: invert(1) brightness(1.2); mix-blend-mode: screen; padding-top: 5px;">
+            <div class="logo-text" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0;">Be Unique</div>
             <nav class="nav-links">
                 <a href="#procedimentos">Especialidades</a>
                 <a href="#resultados">Resultados</a>
@@ -77,30 +77,6 @@
 
 
 
-    <!-- Resultados Section -->
-    <section id="resultados" class="results" style="padding: 100px 0; background: var(--bg-card);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Resultados Reais</h2>
-                <div class="line"></div>
-                <p style="color: var(--text-muted); margin-top: 15px; max-width: 600px; margin-inline: auto;">Transformações que valorizam a beleza natural de cada paciente.</p>
-            </div>
-            
-            <div class="slider-container" style="position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2);">
-                <div class="image-comparison" style="position: relative; width: 100%; height: 500px; background: #000;">
-                    <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/resultado1.jpg" alt="Antes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                    <div class="img-after-wrapper" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden;">
-                        <img class="img-after" src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/resultado 1.png" alt="Depois" style="height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="slider-handle" style="position: absolute; top: 0; left: 50%; width: 4px; height: 100%; background: var(--gold); cursor: ew-resize; transform: translateX(-50%);">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
-                            <span style="color: #000; font-size: 20px; font-weight: bold;">&lt;&gt;</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Depoimentos Section -->
     <section id="depoimentos" class="testimonials" style="padding: 100px 0; background: var(--bg-dark);">
@@ -132,11 +108,11 @@
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-escritorio.mp4" type="video/mp4">
         </video>
-        <div class="hero-content container" style="max-width: 900px; margin: 0 auto; padding: 120px 0; text-align: center;">
-            <h2 class="headline" style="font-size: 3rem; margin-bottom: 25px;">A Autoridade de Infraestrutura</h2>
-            <p class="hero-text" style="font-size: 1.2rem; max-width: 100%; color: #eee; font-weight: 300;">Clínica especializada em procedimentos estéticos faciais avançados. Estrutura completa e profissionais capacitados para realizar harmonização facial, rinomodelação e otomodelação com total segurança.</p>
+        <div class="hero-content container" style="max-width: 800px; margin: 0 auto; padding: 100px 20px; text-align: center;">
+            <h2 class="headline" style="font-size: 2.5rem; margin-bottom: 20px;">Infraestrutura Premium</h2>
+            <p class="hero-text" style="font-size: 1.1rem; color: #eee; font-weight: 300;">Clínica especializada em estética facial avançada. Segurança e conforto para realizar o seu procedimento.</p>
             
-            <div class="stats" style="display: flex; gap: 60px; justify-content: center; margin-top: 50px;">
+            <div class="stats" style="display: flex; gap: 40px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
                 <div class="stat">
                     <span class="number" style="display: block; font-size: 2.2rem; color: var(--accent); font-family: 'Playfair Display', serif; margin-bottom: 5px;">Tatuapé</span>
                     <span class="label" style="font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #aaa;">São Paulo - SP</span>
@@ -176,5 +152,34 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script>
+        // Animação Premium de Scroll para os cards de Especialidades
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.procedures .card');
+            
+            window.addEventListener('scroll', () => {
+                cards.forEach((card, index) => {
+                    const rect = card.getBoundingClientRect();
+                    // Quando o card começa a subir e sair da tela (viewport)
+                    if (rect.top < window.innerHeight * 0.3) { 
+                        // Calcula o quanto já subiu além do ponto de gatilho
+                        let distance = (window.innerHeight * 0.3) - rect.top;
+                        
+                        // O primeiro card (par) vai para a esquerda, o segundo (ímpar) para a direita
+                        let direction = index % 2 === 0 ? -1 : 1;
+                        let shift = distance * 1.5 * direction;
+                        let opacity = Math.max(1 - (distance / 300), 0);
+                        
+                        card.style.transform = `translateX(${shift}px)`;
+                        card.style.opacity = opacity;
+                    } else {
+                        // Reset quando estiver na visualização normal
+                        card.style.transform = 'none';
+                        card.style.opacity = 1;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
