@@ -113,7 +113,7 @@
             <h2 class="headline" style="font-size: 3.5rem; margin-bottom: 20px;">Infraestrutura <i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Premium</i></h2>
             
             <div style="aspect-ratio: 16/9; width: 100%; margin: 40px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.2);">
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.02);">
                     <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-escritorio.mp4" type="video/mp4">
                 </video>
             </div>
@@ -161,8 +161,10 @@
 
     <style>
         @media (max-width: 768px) {
-            .nav-content { display: flex !important; justify-content: space-between; }
+            .navbar { height: auto !important; padding: 15px 0; }
+            .nav-content { display: flex !important; flex-direction: column; justify-content: center; gap: 15px; }
             .nav-content > div:last-child { display: none; }
+            .nav-links { display: flex !important; margin: 0; }
             .headline { font-size: 3rem !important; }
         }
     </style>
@@ -180,13 +182,19 @@
                     if (rect.top < window.innerHeight * 0.3) { 
                         // Calcula o quanto já subiu além do ponto de gatilho
                         let distance = (window.innerHeight * 0.3) - rect.top;
-                        
-                        // O primeiro card (par) vai para a esquerda, o segundo (ímpar) para a direita
-                        let direction = index % 2 === 0 ? -1 : 1;
-                        let shift = distance * 1.5 * direction;
                         let opacity = Math.max(1 - (distance / 300), 0);
                         
-                        card.style.transform = `translateX(${shift}px)`;
+                        if (window.innerWidth <= 768) {
+                            // Mobile: Primeiro card pra esquerda, segundo pra direita
+                            let direction = index % 2 === 0 ? -1 : 1;
+                            let shift = distance * 1.5 * direction;
+                            card.style.transform = `translateX(${shift}px)`;
+                        } else {
+                            // Desktop: Todos sobem suavemente
+                            let shift = -distance;
+                            card.style.transform = `translateY(${shift}px)`;
+                        }
+                        
                         card.style.opacity = opacity;
                     } else {
                         // Reset quando estiver na visualização normal
