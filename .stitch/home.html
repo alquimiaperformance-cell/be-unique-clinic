@@ -154,11 +154,9 @@ h2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
     z-index: -2;
     object-fit: cover;
 }
@@ -259,6 +257,32 @@ h2 {
 .card-content p {
     color: var(--text-muted);
     font-size: 0.95rem;
+}
+
+/* Editorial & Tags */
+.tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin-bottom: 20px;
+}
+
+.quote-icon {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 0;
+    color: var(--gold);
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 25px;
+    margin-top: 20px;
 }
 
 /* About Section */
@@ -470,15 +494,16 @@ h2 {
 <body>
 
     <!-- Navegação -->
-    <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo-text" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin: 0;">Be Unique</div>
-            <nav class="nav-links">
-                <a href="#procedimentos">Especialidades</a>
-                <a href="#resultados">Resultados</a>
-                <a href="#sobre">A Clínica</a>
-                <a href="#contato" class="btn btn-outline">Agendar Avaliação</a>
+    <header class="navbar" style="height: 90px; display: flex; align-items: center;">
+        <div class="container nav-content" style="width: 100%; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;">
+            <div class="logo-text" style="font-family: var(--font-body); font-size: 1.2rem; font-weight: 700; color: var(--text-light); letter-spacing: 2px; text-transform: uppercase; margin: 0; white-space: nowrap;">Be Unique <span style="font-weight: 300; color: var(--gold);">Clínica</span></div>
+            <nav class="nav-links" style="display: flex; gap: 30px; justify-content: center;">
+                <a href="#procedimentos" style="margin: 0;">Especialidades</a>
+                <a href="#sobre" style="margin: 0;">A Clínica</a>
             </nav>
+            <div style="text-align: right;">
+                <a href="#contato" class="btn btn-outline" style="border-radius: 50px;">Agendar Avaliação</a>
+            </div>
         </div>
     </header>
 
@@ -488,10 +513,10 @@ h2 {
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-hero.mp4" type="video/mp4">
         </video>
-        <div class="hero-content container">
-            <span class="subtitle">Be Unique Clinic</span>
-            <h2 class="headline">Harmonização Facial, Rinomodelação Estruturada e Otomodelação.</h2>
-            <p class="hero-text">Procedimentos estéticos de alto padrão para realçar sua beleza natural.</p>
+        <div class="hero-content container" style="text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 20px;">
+            <span class="tag">Bem-vindo à Be Unique</span>
+            <h2 class="headline" style="font-size: 4.5rem; line-height: 1.05;">Harmonização Facial,<br><i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Rinomodelação Estruturada</i><br>e Otomodelação.</h2>
+            <p class="hero-text" style="font-size: 1.2rem; max-width: 500px;">Procedimentos estéticos de alto padrão para realçar sua beleza natural.</p>
             <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-primary">Agendar pelo WhatsApp</a>
         </div>
     </section>
@@ -505,7 +530,7 @@ h2 {
             </div>
             
             <div class="cards-grid">
-                <div class="card">
+                <div class="card" style="border-radius: 16px;">
                     <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/harmonizacao-facial-realista.png" alt="Harmonização Facial">
                     <div class="card-content">
                         <h3>Harmonização Facial</h3>
@@ -513,7 +538,7 @@ h2 {
                     </div>
                 </div>
                 
-                <div class="card delay-1">
+                <div class="card delay-1" style="border-radius: 16px;">
                     <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/rinomodelação-estruturada.jpg" alt="Rinomodelação">
                     <div class="card-content">
                         <h3>Rinomodelação Estruturada</h3>
@@ -521,7 +546,7 @@ h2 {
                     </div>
                 </div>
 
-                <div class="card delay-2">
+                <div class="card delay-2" style="border-radius: 16px;">
                     <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/otomodelação.png" alt="Otomodelação">
                     <div class="card-content">
                         <h3>Otomodelação</h3>
@@ -539,37 +564,37 @@ h2 {
     <section id="depoimentos" class="testimonials" style="padding: 100px 0; background: var(--bg-dark);">
         <div class="container">
             <div class="section-title">
-                <h2>O que nossas pacientes dizem</h2>
+                <h2>O que nossas <i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">pacientes</i> dizem</h2>
                 <div class="line"></div>
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="card" style="padding: 30px; background: var(--bg-card); border-radius: 8px; border-left: 3px solid var(--gold);">
-                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"A Dra. Letícia tem mãos de fada! O resultado ficou super natural, exatamente como eu queria. A clínica é linda e o atendimento impecável."</p>
-                    <h4 style="color: var(--gold); font-family: var(--font-heading);">Mariana S.</h4>
+                <div class="card" style="padding: 40px; background: var(--bg-card); border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.1);">
+                    <span class="quote-icon">"</span>
+                    <p style="font-size: 1.05rem; font-style: italic; color: var(--text-light); margin-bottom: 30px;">A Dra. Letícia tem mãos de fada! O resultado ficou super natural, exatamente como eu queria. A clínica é linda e o atendimento impecável.</p>
+                    <h4 style="color: var(--gold); font-family: var(--font-body); font-weight: 600;">Mariana S.</h4>
                 </div>
-                <div class="card" style="padding: 30px; background: var(--bg-card); border-radius: 8px; border-left: 3px solid var(--gold);">
-                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"Fiz minha rinomodelação e estou apaixonada. A recuperação foi tranquila e a estrutura do consultório me passou muita segurança."</p>
-                    <h4 style="color: var(--gold); font-family: var(--font-heading);">Fernanda C.</h4>
+                <div class="card" style="padding: 40px; background: var(--bg-card); border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.1);">
+                    <span class="quote-icon">"</span>
+                    <p style="font-size: 1.05rem; font-style: italic; color: var(--text-light); margin-bottom: 30px;">Fiz minha rinomodelação e estou apaixonada. A recuperação foi tranquila e a estrutura do consultório me passou muita segurança.</p>
+                    <h4 style="color: var(--gold); font-family: var(--font-body); font-weight: 600;">Fernanda C.</h4>
                 </div>
-                <div class="card" style="padding: 30px; background: var(--bg-card); border-radius: 8px; border-left: 3px solid var(--gold);">
-                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"Minha otomodelação mudou minha autoestima! Recomendo de olhos fechados o trabalho primoroso."</p>
-                    <h4 style="color: var(--gold); font-family: var(--font-heading);">Camila R.</h4>
+                <div class="card" style="padding: 40px; background: var(--bg-card); border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.1);">
+                    <span class="quote-icon">"</span>
+                    <p style="font-size: 1.05rem; font-style: italic; color: var(--text-light); margin-bottom: 30px;">Minha otomodelação mudou minha autoestima! Recomendo de olhos fechados o trabalho primoroso e de alta precisão.</p>
+                    <h4 style="color: var(--gold); font-family: var(--font-body); font-weight: 600;">Camila R.</h4>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Sobre Section -->
-    <section id="sobre" class="hero" style="min-height: 70vh;">
-        <div class="video-overlay" style="background: rgba(0,0,0,0.75);"></div>
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-escritorio.mp4" type="video/mp4">
-        </video>
-        <div class="hero-content container" style="max-width: 800px; margin: 0 auto; padding: 100px 20px; text-align: center;">
-            <h2 class="headline" style="font-size: 2.5rem; margin-bottom: 20px;">Infraestrutura Premium</h2>
-            <p class="hero-text" style="font-size: 1.1rem; color: #eee; font-weight: 300;">Clínica especializada em estética facial avançada. Segurança e conforto para realizar o seu procedimento.</p>
+    <section id="sobre" class="hero" style="min-height: auto; background: var(--bg-card); padding: 120px 0;">
+        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
+            <span class="tag">A Clínica</span>
+            <h2 class="headline" style="font-size: 3.5rem; margin-bottom: 20px;">Infraestrutura <i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Premium</i></h2>
+            <p class="hero-text" style="font-size: 1.1rem; color: var(--text-light); font-weight: 300; line-height: 1.8; margin-bottom: 50px;">Clínica especializada em estética facial avançada. Priorizamos a segurança, o conforto e a discrição para que você tenha a melhor experiência desde a primeira consulta.</p>
             
-            <div class="stats" style="display: flex; gap: 40px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
+            <div class="stats" style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; border: none; padding: 0;">
                 <div class="stat">
                     <span class="number" style="display: block; font-size: 2.2rem; color: var(--accent); font-family: 'Playfair Display', serif; margin-bottom: 5px;">Tatuapé</span>
                     <span class="label" style="font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #aaa;">São Paulo - SP</span>
@@ -608,6 +633,13 @@ h2 {
         </div>
     </footer>
 
+    <style>
+        @media (max-width: 768px) {
+            .nav-content { display: flex !important; justify-content: space-between; }
+            .nav-content > div:last-child { display: none; }
+            .headline { font-size: 3rem !important; }
+        }
+    </style>
     <script src="js/app.js"></script>
     <script>
         // Animação Premium de Scroll para os cards de Especialidades
