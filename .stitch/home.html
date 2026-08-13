@@ -150,7 +150,7 @@ h2 {
     overflow: hidden;
 }
 
-.hero-image {
+.hero-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -159,7 +159,11 @@ h2 {
     transform: translate(-50%, -50%);
     z-index: -2;
     object-fit: cover;
-    will-change: transform;
+}
+@media (max-width: 768px) {
+    .hero-video-top {
+        object-position: 30% center;
+    }
 }
 
 .video-overlay {
@@ -511,7 +515,9 @@ h2 {
     <!-- Hero Section com Vídeo de Fundo -->
     <section class="hero">
         <div class="video-overlay" style="background: linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.3) 100%);"></div>
-        <img src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/imagem%20hero.png" class="hero-image" alt="Be Unique Hero">
+        <video autoplay muted loop playsinline class="hero-video hero-video-top">
+            <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-hero.mp4" type="video/mp4">
+        </video>
         <div class="hero-content container" style="text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 20px;">
             <span class="tag">Bem-vindo à Be Unique</span>
             <h2 class="headline" style="font-size: 4.5rem; line-height: 1.05;">Harmonização Facial,<br><i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Rinomodelação Estruturada</i><br>e Otomodelação.</h2>
@@ -591,6 +597,13 @@ h2 {
         <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
             <span class="tag">A Clínica</span>
             <h2 class="headline" style="font-size: 3.5rem; margin-bottom: 20px;">Infraestrutura <i style="font-family: var(--font-heading); font-weight: 300; color: var(--gold);">Premium</i></h2>
+            
+            <div style="aspect-ratio: 16/9; width: 100%; margin: 40px 0; border-radius: 16px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.2);">
+                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                    <source src="https://raw.githubusercontent.com/alquimiaperformance-cell/be-unique-clinic/main/assets/images/video-escritorio.mp4" type="video/mp4">
+                </video>
+            </div>
+
             <p class="hero-text" style="font-size: 1.1rem; color: var(--text-light); font-weight: 300; line-height: 1.8; margin-bottom: 50px;">Clínica especializada em estética facial avançada. Priorizamos a segurança, o conforto e a discrição para que você tenha a melhor experiência desde a primeira consulta.</p>
             
             <div class="stats" style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; border: none; padding: 0;">
@@ -641,23 +654,12 @@ h2 {
     </style>
     <script src="js/app.js"></script>
     <script>
-        // Animação Premium de Scroll para os cards de Especialidades e Hero Image
+        // Animação Premium de Scroll para os cards de Especialidades
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.procedures .card');
-            const heroImage = document.querySelector('.hero-image');
             
             window.addEventListener('scroll', () => {
-                let scrollY = window.scrollY;
-
-                // 1. Efeito Parallax Dinâmico na Imagem de Fundo
-                if (heroImage && scrollY <= window.innerHeight) {
-                    // Expande levemente a imagem e empurra para baixo para dar profundidade
-                    let scale = 1 + (scrollY / window.innerHeight) * 0.15;
-                    let translateY = scrollY * 0.35;
-                    heroImage.style.transform = `translate(-50%, calc(-50% + ${translateY}px)) scale(${scale})`;
-                }
-
-                // 2. Efeito Magnético nos Cards
+                // Efeito Magnético nos Cards
                 cards.forEach((card, index) => {
                     const rect = card.getBoundingClientRect();
                     // Quando o card começa a subir e sair da tela (viewport)
